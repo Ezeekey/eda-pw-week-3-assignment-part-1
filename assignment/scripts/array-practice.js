@@ -53,7 +53,8 @@ animalArray.push('penguin');
 console.log('Added an animal to end,', animalArray);
 
 // 4.a. TODO: Add a new food at the end of your array & log the array
-
+favoriteFoods.push("Deer stew");
+console.log("Favorite foods are now: ", favoriteFoods);
 
 
 // Example: Remove the last animal by using Array.pop
@@ -63,6 +64,8 @@ console.log('The animals are now', animalArray);
 
 // 4.b. TODO: Remove the food at the end of your array & 
 //      log both the food removed and the updated array
+console.log("Removed the food", favoriteFoods.pop());
+console.log("Favorite foods are now: ", favoriteFoods);
 
 
 // Example: Add an animal to the beginning using Array.unshift
@@ -70,6 +73,8 @@ animalArray.unshift('walrus');
 console.log(`Added an animal to beginning: ${animalArray}`);
 
 // 4.c. TODO: Add a food at the beginning of the array & log the array
+favoriteFoods.unshift("Ice cream");
+console.log("Added new food to beginning of array: ", favoriteFoods);
 
 
 // Example: Remove the first animal using Array.shift
@@ -79,20 +84,43 @@ console.log('The animals are now', animalArray);
 
 // 4.d TODO: Remove the food at the beginning of your array & 
 //     log both the food removed and the updated array
+console.log("Removed from favoriteFoods: ", favoriteFoods.shift());
+console.log("Favorite foods are now: ", favoriteFoods);
 
 // 4.e (STRETCH) TODO: Replace the second food in your array
 //      with another one of your favorite foods.
 //      Then log the updated array.
+favoriteFoods[1] = "Banana";
+console.log("Favorite foods are now: ", favoriteFoods);
 
 // 4.f (STRETCH) TODO: Sort your favoriteFoods array
 //     in reverse alphabetical order. Log the array.
+favoriteFoods.sort(function(a, b) {
+    if (a[0] > b[0]) {
+        return -1;
+    } else if (a[0] < b[0]) {
+        return 1;
+    } else {
+        return 0;
+    }
+});
+// NOTE: This was a tricky one. I had to look up the Mozilla Javascript reference for this.
+// Is there an easier way to do this that I did not see?
+
+console.log("Favorite foods after sorting are now: ", favoriteFoods);
 
 // 4.g (STRETCH) TODO: Convert your array to a string
 //     putting the word "and" between each item.
 //     eg "tacos and pizza and pasta". Log the string.
+console.log(favoriteFoods[0], " and ", favoriteFoods[1], " and ", favoriteFoods[2], " and ", favoriteFoods[3]);
+// NOTE: I know there is a better way to do this using a for loop.
+// I also have a feeling there is a better way to do this then just
+// slapping it togehter using the individual indexes.
 
 // 4.h (STRETCH) TODO: Make a new array that combines 
 //     the favorite foods array with the animals array.
 //     Then log the new array.
 //     It should look something like:
 //     ['pizza', 'pasta', 'fish', 'cat', 'bird', 'dog']
+let bigBigArray = favoriteFoods.concat(animalArray);
+console.log(bigBigArray);
